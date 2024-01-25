@@ -6,22 +6,20 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         String text = sc.nextLine();
-        String find = sc.nextLine();
+        String word = sc.nextLine();
 
         int answer = 0;
         int startIndex = 0;
 
         while (true) {
-            int index = text.indexOf(find, startIndex);
-
-            if (index == -1) {
+            int index = text.indexOf(word, startIndex);
+            if (index < 0) {
                 break;
             }
 
-            startIndex = index + find.length();
             answer++;
+            startIndex = index + word.length();
         }
-
         System.out.println(answer);
     }
 }
