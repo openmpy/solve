@@ -8,7 +8,6 @@ public class Main {
         int n = sc.nextInt();
         int b = sc.nextInt();
 
-        String string = Integer.toString(n, b);
-        System.out.println(string.toUpperCase());
+        System.out.println(Integer.toString(n, b).toUpperCase());
     }
 }
