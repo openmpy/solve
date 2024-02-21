@@ -1,9 +1,3 @@
 def solution(n):
-    answer = []
-    s = str(n)
-    
-    arr = list(s)
-    arr.reverse()
-    
-    answer = list(map(int, arr))
+    answer = list(map(int, reversed(str(n))))
     return answer
