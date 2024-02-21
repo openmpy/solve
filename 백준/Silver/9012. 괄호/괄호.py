@@ -1,4 +1,4 @@
-import sys, math
+import sys
 
 # sys.stdin = open("input.txt", "r")
 
@@ -8,19 +8,16 @@ for i in range(n):
     text = sys.stdin.readline().strip()
 
     stack = []
-    is_flag = False
+    isFlag = False
 
     for c in text:
         if c == '(':
-            stack.append('(')
-        else:
-            if len(stack) == 0:
-                is_flag = True
-                break
+            stack.append(')')
+        elif not stack or stack.pop() != c:
+            isFlag = True
+            break
 
-            stack.pop()
-    
-    if len(stack):
-        is_flag = True
+    if stack:
+        isFlag = True
 
-    print('NO' if is_flag == True else 'YES')
+    print('NO' if isFlag else 'YES')
