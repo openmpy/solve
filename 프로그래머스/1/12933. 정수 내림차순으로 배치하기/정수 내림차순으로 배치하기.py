@@ -1,11 +1,3 @@
 def solution(n):
-    s = str(n)
-    arr = list(map(str, s))
-    
-    arr = sorted(arr, reverse = True)
-    
-    s2 = ''
-    for ch in arr:
-        s2 += ch
-        
-    return int(s2)
+    answer = int(''.join(sorted(list(map(str, str(n))), reverse = True)))
+    return answer
