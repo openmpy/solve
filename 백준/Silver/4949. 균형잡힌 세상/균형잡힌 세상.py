@@ -1,41 +1,26 @@
-import sys, math
+import sys
 
 # sys.stdin = open("input.txt", "r")
 
-while(True):
+while True:
     text = input()
 
     if text == '.':
         break
 
     stack = []
-    is_flag = True
+    isFlag = False
 
-    for ch in text:
-        if ch == '(' or ch == '[':
-            stack.append(ch)
-        elif ch == ')':
-            if len(stack) == 0:
-                is_flag = False
-                break
-
-            if stack[-1] == '(':
-                stack.pop()
-            else:
-                is_flag = False
-                break
-        elif ch == ']':
-            if len(stack) == 0:
-                is_flag = False
-                break
-
-            if stack[-1] == '[':
-                stack.pop()
-            else:
-                is_flag = False
-                break
-
-    if stack:
-        is_flag = False
+    for c in text:
+        if c == '(':
+            stack.append(')')
+        elif c == '[':
+            stack.append(']')
+        elif (c == ']' or c == ')') and (not stack or stack.pop() != c):
+            isFlag = True
+            break
     
-    print('yes' if is_flag else 'no')
+    if stack:
+        isFlag = True
+
+    print('no' if isFlag else 'yes')
