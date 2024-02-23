@@ -1,12 +1,12 @@
 def solution(s):
     answer = []
-    text = ''
+    s2 = ''
     
-    for i, ch in enumerate(s):
-        if text.rfind(ch) != -1:
-            answer.append(i - text.rfind(ch))
+    for i, c in enumerate(s):
+        if s2.find(c) != -1:
+            answer.append(i - s2.rfind(c))
         else:
-            answer.append(text.rfind(ch))
-        text += ch
+            answer.append(-1)
+        s2 += c
         
     return answer
