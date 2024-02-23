@@ -1,4 +1,7 @@
 def solution(s):
-    if s.isnumeric() and (len(s) == 4 or len(s) == 6):
-        return True
-    return False
+    try:
+        int(s)
+    except:
+        return False
+    
+    return True if len(s) == 4 or len(s) == 6 else False
