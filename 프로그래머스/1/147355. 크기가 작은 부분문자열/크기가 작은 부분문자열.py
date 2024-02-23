@@ -1,9 +1,8 @@
 def solution(t, p):
     answer = 0
-    l = len(p)
-    print(l)
     
-    for i in range(len(t) - l + 1):
-        if int(t[i:i + l]) <= int(p):
+    for i in range(len(t) - len(p) + 1):
+        if int(t[i : i + len(p)]) <= int(p):
             answer += 1
+        
     return answer
