@@ -1,15 +1,18 @@
 def solution(s):
-    answer = s.split(' ')
+    answer = ''
     
-    arr = []
-    for text in answer:
-        s2 = ''
-        for i, ch in enumerate(text):
-            if i % 2 == 1:
-                s2 += ch.lower()
+    arr = s.split(' ')
+    li = []
+    
+    for s in arr:
+        tmp = ''
+        for i, c in enumerate(s):
+            if i % 2 == 0:
+                tmp += c.upper()
             else:
-                s2 += ch.upper()
+                tmp += c.lower()
                 
-        arr.append(s2)
-        
-    return ' '.join(arr)
+        li.append(tmp)
+    
+    answer = ' '.join(li)
+    return answer
