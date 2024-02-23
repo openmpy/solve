@@ -1,5 +1,5 @@
 def solution(s):
-    context = {
+    ctx = {
         'zero': '0',
         'one': '1',
         'two': '2',
@@ -12,7 +12,7 @@ def solution(s):
         'nine': '9'
     }
     
-    for i in context:
-        s = s.replace(i, context[i])
+    for i in ctx:
+        s = s.replace(i, ctx[i])
         
     return int(s)
