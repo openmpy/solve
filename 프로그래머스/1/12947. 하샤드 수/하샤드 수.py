@@ -1,10 +1,7 @@
 def solution(x):
-    answer = True
-    
-    arr = list(str(x))
-    
-    sum = 0
-    for ch in arr:
-        sum += int(ch)
-    
-    return True if x % sum == 0 else False
+    s = 0
+
+    for c in str(x):
+        s += int(c)
+
+    return x % s == 0
