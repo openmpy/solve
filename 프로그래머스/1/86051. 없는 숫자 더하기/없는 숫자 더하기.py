@@ -1,7 +1,3 @@
 def solution(numbers):
-    answer = 45
-    
-    for num in numbers:
-        answer -= num
-        
+    answer = sum(range(1, 10)) - sum(numbers)
     return answer
