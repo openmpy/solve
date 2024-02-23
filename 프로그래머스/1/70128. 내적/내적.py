@@ -1,6 +1,3 @@
 def solution(a, b):
-    answer = 0
-    
-    for i, n in enumerate(a):
-        answer += n * b[i]
+    answer = sum(i * j for i, j in zip(a, b))
     return answer
