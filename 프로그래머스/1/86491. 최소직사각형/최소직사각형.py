@@ -1,11 +1,19 @@
 def solution(sizes):
-    answer = x = y = 0
+    answer = 0
     
-    for i in range(len(sizes)):
-        tmp1 = max(sizes[i][0], sizes[i][1])
-        tmp2 = min(sizes[i][0], sizes[i][1])
+    mx = 0
+    mn = 0
+    
+    ax = 0
+    ax2 = 0
+    
+    for i in sizes:
+        mx = max(i[0], i[1])
+        ms = min(i[0], i[1])
         
-        x = max(x, tmp1)
-        y = max(y, tmp2)
+        ax = max(mx, ax)
+        ax2 = max(ms, ax2)
         
-    return x * y
+    answer = ax * ax2
+    
+    return answer
